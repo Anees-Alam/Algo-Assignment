@@ -84,6 +84,17 @@ while True:
         new_product = Product(id, name, price, category)
         manager.insert_data(new_product)
         print("Added successfully.")
+        # Time taken to sort data loaded from file
+        start_time = timeit.default_timer()
+        manager.bubble_sort_price()
+        end_time = timeit.default_timer()
+        print(f"Time taken to sort data from file: {end_time - start_time:.6f} seconds")
+
+        # Time taken to reverse sort data loaded from file
+        start_time = timeit.default_timer()
+        manager.products.reverse()  # Reverse the order of the products list
+        end_time = timeit.default_timer()
+        print(f"Time taken to reverse sort data from file: {end_time - start_time:.6f} seconds")
     # for when 2 is pressed to update data in list
     elif choice == '2':
         product_id = input("Please enter the ID to update: ")
@@ -99,39 +110,83 @@ while True:
             new_details['category'] = category
         manager.update_data(product_id, new_details)
         print("Updated successfully.")
+                # Time taken to sort data loaded from file
+        start_time = timeit.default_timer()
+        manager.bubble_sort_price()
+        end_time = timeit.default_timer()
+        print(f"Time taken to sort data from file: {end_time - start_time:.6f} seconds")
+
+        # Time taken to reverse sort data loaded from file
+        start_time = timeit.default_timer()
+        manager.products.reverse()  # Reverse the order of the products list
+        end_time = timeit.default_timer()
+        print(f"Time taken to reverse sort data from file: {end_time - start_time:.6f} seconds")
     # for when 3 is pressed to delete any data from list
     elif choice == '3':
         product_id = input("Please enter ID to delete: ")
         manager.delete_data(product_id)
         print("Deleted successfully.")
+        # Time taken to sort data loaded from file
+        start_time = timeit.default_timer()
+        manager.bubble_sort_price()
+        end_time = timeit.default_timer()
+        print(f"Time taken to sort data from file: {end_time - start_time:.6f} seconds")
+
+        # Time taken to reverse sort data loaded from file
+        start_time = timeit.default_timer()
+        manager.products.reverse()  # Reverse the order of the products list
+        end_time = timeit.default_timer()
+        print(f"Time taken to reverse sort data from file: {end_time - start_time:.6f} seconds")
     # for when 4 is pressed to search existing data in list
     elif choice == '4':
         product_id = input("Please enter the ID to search: ")
         product = manager.search_id(product_id)
         if product:
             print(product.name, product.price, product.category)
+            # Time taken to sort data loaded from file
+            start_time = timeit.default_timer()
+            manager.bubble_sort_price()
+            end_time = timeit.default_timer()
+            print(f"Time taken to sort data from file: {end_time - start_time:.6f} seconds")
+
+            # Time taken to reverse sort data loaded from file
+            start_time = timeit.default_timer()
+            manager.products.reverse()  # Reverse the order of the products list
+            end_time = timeit.default_timer()
+            print(f"Time taken to reverse sort data from file: {end_time - start_time:.6f} seconds")
         else:
             print("not found.")
     # for when 5 is pressed to show all data in file
     elif choice == '5':
         manager.show_all_products()
+
+        # Time taken to sort data loaded from file
+        start_time = timeit.default_timer()
+        manager.bubble_sort_price()
+        end_time = timeit.default_timer()
+        print(f"Time taken to sort data from file: {end_time - start_time:.6f} seconds")
+
+        # Time taken to reverse sort data loaded from file
+        start_time = timeit.default_timer()
+        manager.products.reverse()  # Reverse the order of the products list
+        end_time = timeit.default_timer()
+        print(f"Time taken to reverse sort data from file: {end_time - start_time:.6f} seconds")
             
     # for when 6 is pressed to exit/kill the program
     elif choice == '6':
         print("Exiting program.")
+        # Time taken to sort data loaded from file
+        start_time = timeit.default_timer()
+        manager.bubble_sort_price()
+        end_time = timeit.default_timer()
+        print(f"Time taken to sort data from file: {end_time - start_time:.6f} seconds")
+
+        # Time taken to reverse sort data loaded from file
+        start_time = timeit.default_timer()
+        manager.products.reverse()  # Reverse the order of the products list
+        end_time = timeit.default_timer()
+        print(f"Time taken to reverse sort data from file: {end_time - start_time:.6f} seconds")
         break
     # for when an invalid number is pressed (any number other than 1-6)
     else:
         print("Invalid number")
-
-# Time taken to sort data loaded from file
-start_time = timeit.default_timer()
-manager.bubble_sort_price()
-end_time = timeit.default_timer()
-print(f"Time taken to sort data from file: {end_time - start_time:.6f} seconds")
-
-# Time taken to reverse sort data loaded from file
-start_time = timeit.default_timer()
-manager.products.reverse()  # Reverse the order of the products list
-end_time = timeit.default_timer()
-print(f"Time taken to reverse sort data from file: {end_time - start_time:.6f} seconds")
