@@ -109,7 +109,7 @@ while True:
         product_id = input("Please enter the ID to search: ")
         product = manager.search_id(product_id)
         if product:
-            print(product.name)
+            print(product.name, product.price, product.category)
         else:
             print("not found.")
     # for when 5 is pressed to show all data in file
